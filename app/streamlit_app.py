@@ -1,7 +1,20 @@
 import sys
 from pathlib import Path
+from src.vector_store import load_vector_store
+from src.config import VECTOR_DB_DIR
+import subprocess
 
 import streamlit as st
+
+def ensure_vector_db():
+    """
+    Ensure vector DB exists, otherwise build it.
+    """
+    if not Path(VECTOR_DB_DIR).exists():
+        print("Vector DB not found. Building index...")
+        subprocess.run(["python", "build_index.py"])
+
+ensure_vector_db()
 
 # Allow imports from project root
 PROJECT_ROOT = Path(__file__).resolve().parent.parent

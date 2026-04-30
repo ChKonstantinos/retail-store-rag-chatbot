@@ -1,0 +1,23 @@
+Document Title: Cash Register Standard Operating Procedure
+
+Purpose:
+This document describes the correct process for opening, operating, and closing the cash register.
+
+Opening Procedure:
+At the beginning of the shift, the cashier must count the starting cash amount.
+The amount must match the opening balance recorded in the system.
+Any difference must be reported to the shift supervisor before sales begin.
+
+During Sales:
+The cashier must scan all products, confirm prices, and issue a receipt for every transaction.
+Discounts or manual price changes require supervisor approval.
+Cash, card, and voucher payments must be recorded correctly in the POS system.
+
+Refunds at Cash Register:
+Refunds must only be processed after the return has been approved according to the Returns and Refunds Policy.
+The cashier must attach the original receipt or return approval note to the daily cash report.
+
+Closing Procedure:
+At the end of the shift, the cashier must count cash, card receipts, and vouchers.
+The closing balance must match the POS report.
+Any cash difference must be documented and reported to the store manager.

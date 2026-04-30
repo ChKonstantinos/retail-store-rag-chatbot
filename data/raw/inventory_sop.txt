@@ -1,0 +1,25 @@
+Document Title: Inventory Receiving and Replenishment SOP
+
+Purpose:
+This SOP explains how employees should receive stock, check deliveries, and replenish store shelves.
+
+Receiving Goods:
+When goods arrive, the employee must compare the delivery note with the physical products.
+The employee must check quantities, product codes, expiration dates, and visible damages.
+Any difference between delivered quantity and delivery note must be recorded immediately.
+
+Damaged or Missing Items:
+Damaged items identified during stock receiving must be separated from sellable stock before they are placed on shelves.
+Missing items must be reported to the supplier or warehouse team before the delivery is accepted in the inventory system.
+The store manager must approve any adjustment in the inventory system.
+This procedure applies only to goods receiving and warehouse stock control, not to customer returns.
+
+Shelf Replenishment:
+Employees should replenish shelves based on product availability, expiry dates, and sales priority.
+Products with earlier expiration dates must be placed in front.
+Empty shelves must be reported during the daily store walk.
+
+Stock Accuracy:
+Inventory records must be updated after receiving goods.
+Employees must avoid moving products without updating the system.
+Stock discrepancies must be investigated before placing new orders.

@@ -1,24 +1,48 @@
 import sys
 from pathlib import Path
 from src.vector_store import load_vector_store
-from src.config import VECTOR_DB_DIR
 import subprocess
 
 import streamlit as st
 
-def ensure_vector_db():
-    """
-    Ensure vector DB exists, otherwise build it.
-    """
-    if not Path(VECTOR_DB_DIR).exists():
-        print("Vector DB not found. Building index...")
-        subprocess.run(["python", "build_index.py"])
-
-ensure_vector_db()
-
 # Allow imports from project root
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 sys.path.append(str(PROJECT_ROOT))
+
+from src.config import VECTOR_DB_DIR, RAW_DATA_DIR
+
+
+def ensure_vector_db():
+    """
+    Build vector DB on startup if it does not exist or is incomplete.
+    """
+
+    chroma_db_file = Path(VECTOR_DB_DIR) / "chroma.sqlite3"
+
+    raw_files = list(Path(RAW_DATA_DIR).glob("*.txt")) + list(Path(RAW_DATA_DIR).glob("*.pdf"))
+
+    if not raw_files:
+        st.error("No documents found in data/raw/. Please check that raw SOP files are uploaded to GitHub.")
+        st.stop()
+
+    if not chroma_db_file.exists():
+        with st.spinner("Vector DB not found. Building index..."):
+            result = subprocess.run(
+                [sys.executable, "build_index.py"],
+                cwd=str(PROJECT_ROOT),
+                capture_output=True,
+                text=True
+            )
+
+        if result.returncode != 0:
+            st.error("Failed to build vector index.")
+            st.code(result.stderr)
+            st.stop()
+        else:
+            st.success("Vector index built successfully.")
+
+
+ensure_vector_db()
 
 from src.rag_pipeline import generate_answer
 

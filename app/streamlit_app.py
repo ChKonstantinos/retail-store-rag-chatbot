@@ -1,7 +1,6 @@
 import sys
-from pathlib import Path
-from src.vector_store import load_vector_store
 import subprocess
+from pathlib import Path
 
 import streamlit as st
 
@@ -10,6 +9,7 @@ PROJECT_ROOT = Path(__file__).resolve().parent.parent
 sys.path.append(str(PROJECT_ROOT))
 
 from src.config import VECTOR_DB_DIR, RAW_DATA_DIR
+from src.rag_pipeline import generate_answer
 
 
 def ensure_vector_db():
@@ -22,7 +22,7 @@ def ensure_vector_db():
     raw_files = list(Path(RAW_DATA_DIR).glob("*.txt")) + list(Path(RAW_DATA_DIR).glob("*.pdf"))
 
     if not raw_files:
-        st.error("No documents found in data/raw/. Please check that raw SOP files are uploaded to GitHub.")
+        st.error("No documents found in data/raw/. Please check GitHub files.")
         st.stop()
 
     if not chroma_db_file.exists():

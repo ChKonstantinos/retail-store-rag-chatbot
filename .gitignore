@@ -9,3 +9,8 @@ outputs/
 
 .venv/
 venv/
+
+.idea/
+*.ipynb_checkpoints/
+Untitled.ipynb
+create_folder_files.ipynb
